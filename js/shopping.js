@@ -19,12 +19,8 @@ $(document).ready(function(){
           if(flag){
           $.each(allitems,function(item,value){
              if(String(value)==("."+buttonvalue)){
-              alert("#"+String(value).substring(1,String(value).length-1)+"P");
-              alert("tgtg1"+$("#"+String(value).substring(1,String(value).length-1)+"P").val());
               var selectprice=$("#"+String(value).substring(1,String(value).length-1)+"P").val();
               var selectquantity=$("#"+String(value).substring(1,String(value).length-1)+"Q").val();
-              alert("tgtg1"+(String(value).substring(1,String(value).length-1)+"Q"));
-              alert("tgtg"+$("#"+String(value).substring(1,String(value).length-1)+"Q").val());
               total=total-parseFloat(selectprice)*parseFloat(selectquantity);
               $(".rows"+String(value).substring(1,String(value).length-1)).remove();
               $(".sales").replaceWith("<div class='sales'><br>Subtotal: $"+total.toFixed(2)+"<br>Tax: [MA @ 6.25%]: $"+(total*0.0625).toFixed(2)+"<br>Purchase Price: $"+(total*1.0625).toFixed(2)+"</div>");
