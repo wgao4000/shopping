@@ -36,7 +36,7 @@ $(document).ready(function(){
 	           if(event.which==13){
 			         event.preventDefault(); 
 			         price_per=$(String(value)).val();
-               alert(price_per);
+              
 		         }
 	        });
 	     });
@@ -45,11 +45,11 @@ $(document).ready(function(){
 	           if(event.which==13){
 			         event.preventDefault(); 
 			         quantity_per=$(String(value)).val();
-               alert(quantity_per);
+       
            // alert($("#checkthis").is(':checked'));
            //  if($("#checkthis").is(':checked')){
           	   total=total+parseFloat(price_per)*parseFloat(quantity_per);
-          	   alert(total);
+          	  
           	   $(".sales").replaceWith("<div class='sales'><br>Subtotal: $"+total.toFixed(2)+"<br>Tax: [MA @ 6.25%]: $"+(total*0.0625).toFixed(2)+"<br>Purchase Price: $"+(total*1.0625).toFixed(2)+"</div>");
              }
          // $(".sales").replaceWith("<div class='sales'><br>Subtotal: "+total.toFixed(2)+"<br>Tax: [MA @ 6.25%]: "+(total*0.0625).toFixed(2)+"<br>Purchase Price: "+(total*1.0625).toFixed(2)+"</div>");
