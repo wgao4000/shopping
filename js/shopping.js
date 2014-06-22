@@ -15,18 +15,12 @@ $(document).ready(function(){
        }
        $("button").click(function(){
           var buttonvalue=String($(this).attr("class"));
-          alert("zag");
+
           $.each(allitems,function(item,value){
-            alert("di");
-            alert(String(value));
-            alert("."+buttonvalue);
+          
         	  if(String(value)==("."+buttonvalue)){
-              alert("#"+String(value).substring(1,String(value).length-1)+"P");
-              alert("tgtg1"+$("#"+String(value).substring(1,String(value).length-1)+"P").val());
               var selectprice=$("#"+String(value).substring(1,String(value).length-1)+"P").val();
               var selectquantity=$("#"+String(value).substring(1,String(value).length-1)+"Q").val();
-              alert("tgtg1"+(String(value).substring(1,String(value).length-1)+"Q"));
-              alert("tgtg"+$("#"+String(value).substring(1,String(value).length-1)+"Q").val());
               total=total-parseFloat(selectprice)*parseFloat(selectquantity);
               $(".rows"+String(value).substring(1,String(value).length-1)).remove();
               $(".sales").replaceWith("<div class='sales'><br>Subtotal: $"+total.toFixed(2)+"<br>Tax: [MA @ 6.25%]: $"+(total*0.0625).toFixed(2)+"<br>Purchase Price: $"+(total*1.0625).toFixed(2)+"</div>");
@@ -53,12 +47,11 @@ $(document).ready(function(){
 	           if(event.which==13){
 			         event.preventDefault(); 
 			         quantity_per=$(String(value)).val();
-               alert(quantity_per);
+               
            // alert($("#checkthis").is(':checked'));
            //  if($("#checkthis").is(':checked')){
           	   total=total+parseFloat(price_per)*parseFloat(quantity_per);
-          	   alert(total);
-          	   alert("haha");
+          	   
                $(".sales").replaceWith("<div class='sales'><br>Subtotal: $"+total.toFixed(2)+"<br>Tax: [MA @ 6.25%]: $"+(total*0.0625).toFixed(2)+"<br>Purchase Price: $"+(total*1.0625).toFixed(2)+"</div>");
              }
          // $(".sales").replaceWith("<div class='sales'><br>Subtotal: "+total.toFixed(2)+"<br>Tax: [MA @ 6.25%]: "+(total*0.0625).toFixed(2)+"<br>Purchase Price: "+(total*1.0625).toFixed(2)+"</div>");
